@@ -9,23 +9,12 @@ jobs:
 
   reserva:
     runs-on: ubuntu-latest
-
     steps:
       - name: Clonar el repositorio
         uses: actions/checkout@v4
-
       - name: Construir y ejecutar el contenedor
-        run: |
-          docker build -t aimharder-bot .
-          docker run --rm aimharder-bot
-
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+        run: make docker/build
+      - name: Run fitbot
+        run: docker run -e email=${{ secrets.EMAIL }} -e password=${{ secrets.PASSWORD }} -e booking-goals={'\"0\":{\"time\":\"1815\"\,\"name\":\"ARIBAU\"}\,\"2\":{\"time\":\"1815\"\,\"name\":\"ARIBAU\"}'} -e box-name=studioone -e box-id=9757 -e days-in-advance=1 fitbot
   
 
