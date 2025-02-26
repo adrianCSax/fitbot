@@ -15,6 +15,6 @@ jobs:
       - name: Construir y ejecutar el contenedor
         run: make docker/build
       - name: Run fitbot
-        run: docker run -e email=${{ secrets.EMAIL }} -e password=${{ secrets.PASSWORD }} -e booking-goals={'\"0\":{\"time\":\"1900\"\,\"name\":\"CROSS\"}\,\"1\":{\"time\":\"1900\"\,\"name\":\"CROSS\"},\"3\":{\"time\":\"1900\"\,\"name\":\"CROSS\"},\"4\":{\"time\":\"1900\"\,\"name\":\"CROSS\"}'} -e box-name=studioone -e box-id=9757 -e days-in-advance=1 fitbot
+        run: docker run -e email=${{ secrets.EMAIL }} -e password=${{ secrets.PASSWORD }} -e booking-goals={'\"0\":{\"time\":\"1900\"\,\"name\":\"CROSS\"}\,\"1\":{\"time\":\"1900\"\,\"name\":\"CROSS\"},\"3\":{\"time\":\"1900\"\,\"name\":\"CROSS\"},\"4\":{\"time\":\"1700\"\,\"name\":\"CROSS\"}'} -e box-name=studioone -e box-id=9757 -e days-in-advance=1 fitbot
   
 
