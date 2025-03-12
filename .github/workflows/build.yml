@@ -2,7 +2,7 @@ name: Reserva automática AimHarder
 
 on:
   schedule:
-    - cron: '1 18 * * *' 
+    - cron: '1 18 * * 1,2,4,5' 
   workflow_dispatch:  # Permite ejecución manual
 
 jobs:
