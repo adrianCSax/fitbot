@@ -2,7 +2,8 @@ name: Reserva automática AimHarder
 
 on:
   schedule:
-    - cron: '1 18 * * 0,1,3,4' 
+    - cron: '0 17 * * 0,1,3,4'  # 17:00 UTC (equivale a 19:00 CEST en verano)
+    #- cron: '0 18 * * 0,1,3,4'  # 18:00 UTC (equivale a 19:00 CET en invierno)
   workflow_dispatch:  # Permite ejecución manual
 
 jobs:
